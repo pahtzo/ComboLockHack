@@ -1,4 +1,4 @@
-﻿/*
+/*
  *  Combination Padlock Hacker
  *  
  *  For assiting with the math involved in calcuating the digits of a typical 0-39 combination padlock.
@@ -26,9 +26,14 @@
  *  SOFTWARE.
  *
  *  Credits to:
+ *  The SANS Holiday Hack Challenge 2023
  *  https://www.sans.org/mlp/holiday-hack-challenge-2023/
+ *  
+ *  Helpful Lock Picker
  *  https://www.youtube.com/watch?v=27rE5ZvWLU0
  *  https://docs.google.com/document/d/1QhKZLDr22G0RpuTSGm0M6pz4dG82IByesim3elwfw98/edit
+ *  
+ *  Flaticon for the lock icon.
  *  https://www.flaticon.com/free-icons/combination
  */
 
@@ -126,7 +131,7 @@ namespace ComboLockHack
             }
 
             /*
-             *  Fill the two second number array using the combo modulus + 2 and combo modulus + 6,
+             *  Fill the two second number arrays using the combo modulus + 2 and combo modulus + 6,
              *  then add 8 to each previous element 4 times with MOD 40.
              *  
              *  This will look like:
@@ -176,8 +181,8 @@ namespace ComboLockHack
 
             /*
              * Remove any second digits within 2 of the third digits.
-             * and, since the third digit A and B candidates are 12 and 32
-             * our two second digit arrays will be:
+             * Since the third digit A and B candidates are 12 and 32
+             * in our example, our two second digit arrays will be:
              *
              * A: 2, 6, 18, 22, 26, 30, 34, 38
              * B: 2, 6, 10, 14, 18, 22, 26, 38
@@ -190,6 +195,7 @@ namespace ComboLockHack
             Array.Sort(second_digitsA);
             Array.Sort(second_digitsB);
 
+            // Print it all out into the text box for the lockpicker.
             String strsecondA = String.Join(", ", second_digitsA);
             String strsecondB = String.Join(", ", second_digitsB);
 
