@@ -1,7 +1,7 @@
 # ComboLockHack
 Combination Padlock Hacker
 
-For assiting with the math involved in calcuating the digits of a typical 0-39 combination padlock.
+For assisting with the math involved in calcuating the digits of a typical 0-39 combination padlock.
 Built after completing the HHC 2023 Faster Lock Combination objective.
 
 This is a Visual Studio 2019 C# .NET project.
