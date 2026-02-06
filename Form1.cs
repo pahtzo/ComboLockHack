@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  Combination Padlock Hacker
  *  
  *  For assiting with the math involved in calcuating the digits of a typical 0-39 combination padlock.
@@ -38,13 +38,10 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ComboLockHack
@@ -94,11 +91,17 @@ namespace ComboLockHack
             {
                 comboBox_guess_even.Enabled = true;
                 comboBox_guess_odd.Enabled = false;
+                label5.Enabled = true;
+                label5.ForeColor = System.Drawing.Color.Green;
+                label4.Enabled = false;
             }
             else
             {
                 comboBox_guess_even.Enabled = false;
                 comboBox_guess_odd.Enabled = true;
+                label5.Enabled = false;
+                label4.Enabled = true;
+                label4.ForeColor = System.Drawing.Color.Green;
             }
 
             guess_num_odd = Convert.ToInt32(comboBox_guess_odd.Items[comboBox_guess_odd.SelectedIndex].ToString());
@@ -226,9 +229,9 @@ namespace ComboLockHack
                 "Combination Modulus   : " + combo_mod.ToString() + "\r\n" +
                 "First Digit           : " + first_digit.ToString() + "\r\n\r\n" +
                 "Second Digits - Set A : " + strsecondA + "\r\n" +
-                "Third Digit - Set  A  : " + t[0] + "\r\n\r\n" +
+                "Third Digit -   Set A : " + t[0] + "\r\n\r\n" +
                 "Second Digits - Set B : " + strsecondB + "\r\n" +
-                "Third Digit - Set  B  : " + t[1] + "\r\n\r\n" +
+                "Third Digit -   Set B : " + t[1] + "\r\n\r\n" +
                 outstr
                 ;
         }
@@ -246,6 +249,25 @@ namespace ComboLockHack
         private void comboBox_guessnum1_SelectedIndexChanged(object sender, EventArgs e)
         {
             calculateCombinations(this, null);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://docs.google.com/document/d/1QhKZLDr22G0RpuTSGm0M6pz4dG82IByesim3elwfw98/",
+                UseShellExecute = true
+            });
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://www.youtube.com/watch?v=27rE5ZvWLU0",
+                UseShellExecute = true
+            });
         }
     }
 }
