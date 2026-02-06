@@ -5,7 +5,7 @@ For assisting with the math involved in calcuating the digits of a typical 0-39 
 Built after completing the HHC 2023 Faster Lock Combination objective.
 
 This is a Visual Studio 2019 C# .NET project.
-There is a release executable in the bin/release directory.
+There is a release executable on the Releases page.
 
 To re-build: clone the project or download and extract the sources then open the solution ComboLockHack.sln file in Visual Studio and build the project.
 
